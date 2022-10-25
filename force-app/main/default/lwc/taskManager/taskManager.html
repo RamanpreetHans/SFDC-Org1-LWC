@@ -1,0 +1,24 @@
+<template>
+
+
+    <div class="slds-grid slds-wrap slds-grid_vertical">
+        <template for:each={users} for:item="user">
+            <div key={user.id} class="slds-col">
+                <div class="slds-col">{user.Name}</div>
+                <div class="slds-grid">
+                    <template for:each={daysArray} for:item="day">
+                        <div key={day.id} class="slds-col">
+                            <c-button user={user.Id}></c-button>
+                           
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+
+    </div>
+
+
+
+</template>

@@ -1,0 +1,28 @@
+<template>
+
+  <lightning-card title="Task Manager" icon-name="custom:custom21">
+
+    <div class="slds-var-m-around_small">
+      <lightning-layout horizontal-align="space">
+        <template for:each={users} for:item="user">
+          <lightning-layout-item key={user.id}>{user.Name}</lightning-layout-item>
+          <template for:each={daysArray} for:item="day">
+            <div key={day.id}>
+              <c-task-mgr-child ></c-task-mgr-child>
+            </div>
+            
+          </template>
+       
+        </template>
+
+        
+
+
+
+
+      </lightning-layout>
+    </div>
+  </lightning-card>
+
+
+</template>

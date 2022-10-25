@@ -1,0 +1,67 @@
+<template>
+
+
+    <template if:false={taskExists}>
+        <lightning-button variant="success" label="+" title="Add Task" onclick={showModal} class="slds-m-left_x-small">
+        </lightning-button>
+
+        <c-modal header={header}>{content1}
+            <lightning-input label="Task Name" value={taskName} onchange={handleTaskName}></lightning-input>
+
+            <lightning-input label="Description" value={description} onchange={handleDescription}>
+            </lightning-input>
+
+            <lightning-input type="date" value={date} label="Date" onchange={handleDate}></lightning-input>
+
+            <lightning-input value={taskUser} label="TaskUser" onchange={handleTaskUser}></lightning-input>
+
+            <div slot="footer">
+                <lightning-button class="slds-p-around_medium" label="Cancel" variant="neutral" onclick={cancelModal}>
+                </lightning-button>
+
+                <lightning-button class="slds-p-around_medium" label="Create Task" variant="brand" onclick={createTask}>
+                </lightning-button>
+
+
+            </div>
+        </c-modal>
+    </template>
+
+    <template if:true={taskExists}>
+        <lightning-button variant="destructive" label="-" title="See Task" onclick={showModal}
+            class="slds-m-left_x-small"></lightning-button>
+        <c-modal header={header}>{content2}
+            <lightning-input label="Task Name" value={taskName} onchange={handleTaskName}></lightning-input>
+
+            <lightning-input label="Description" value={description} onchange={handleDescription}>
+            </lightning-input>
+
+            <lightning-input type="date" value={date} label="Date" onchange={handleDate}></lightning-input>
+
+            <lightning-input value={taskUser} label="TaskUser" onchange={handleTaskUser}></lightning-input>
+
+            <div slot="footer">
+                <lightning-button class="slds-p-around_medium" label="Cancel" variant="neutral" onclick={cancelModal}>
+                </lightning-button>
+
+                <lightning-button class="slds-p-around_medium" label="Edit Task" variant="brand" onclick={editTask}>
+                </lightning-button>
+
+                <lightning-button class="slds-p-around_medium" label="Delete Task" variant="brand" onclick={deleteTask}>
+                </lightning-button>
+
+
+
+
+            </div>
+
+
+        </c-modal>
+
+    </template>
+
+
+
+
+
+</template>
